@@ -1190,3 +1190,18 @@ module.exports = function(uri, key, value) {
 
 },{}]},{},[1])(1)
 });
+
+$(document).on('pjax:start', function () {
+    if (window.dplayers) {
+      for (let i = 0; i < window.dplayers.length; i++) {
+          window.dplayers[i].destroy();
+      }
+      window.dplayers = [];
+    }
+    if (window.aplayers) {
+      for (let i = 0; i < window.aplayers.length; i++) {
+        window.aplayers[i].destroy();
+      }
+      window.aplayers = [];
+    }
+});
